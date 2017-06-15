@@ -1,0 +1,957 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "v3",
+    "title" : "Instabug APIs",
+    "description" : "Instabug APIs documentation"
+  },
+  "produces" : [ "application/json" ],
+  "paths" : {
+    "/bugs" : {
+      "post" : {
+        "summary" : "Report Bug",
+        "description" : "Report a Bug from the SDK\n",
+        "parameters" : [ {
+          "name" : "userSteps",
+          "in" : "formData",
+          "description" : "Bug User Steps",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "city",
+          "in" : "formData",
+          "description" : "City wich bug is reported from",
+          "required" : true,
+          "type" : "string",
+          "format" : "formData"
+        }, {
+          "name" : "memoryUsed",
+          "in" : "formData",
+          "description" : "Memory that application used",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "uuid",
+          "in" : "formData",
+          "description" : "User ID",
+          "required" : false,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "device",
+          "in" : "formData",
+          "description" : "Device Name",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "memoryFree",
+          "in" : "formData",
+          "description" : "Device Free Memory",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "carrier",
+          "in" : "formData",
+          "description" : "Internet Carrier",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "batteryState",
+          "in" : "formData",
+          "description" : "Battary State (plugged, unplugged)",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "batteryLevel",
+          "in" : "formData",
+          "description" : "Devise battary level",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "storageUsed",
+          "in" : "formData",
+          "description" : "Devise Used Storage",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "storageFree",
+          "in" : "formData",
+          "description" : "Devise Free Storage",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "memoryTotal",
+          "in" : "formData",
+          "description" : "Devise Total Memory",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "wifi_state",
+          "in" : "formData",
+          "description" : "Devise wifi state(conected => true, disconnected => false)",
+          "required" : false,
+          "type" : "boolean",
+          "format" : "formdata"
+        }, {
+          "name" : "token",
+          "in" : "formData",
+          "description" : "Bug Token",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "methodsLog",
+          "in" : "formData",
+          "description" : "Methods Log",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "SDKVersion",
+          "in" : "formData",
+          "description" : "SDK Version",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "os",
+          "in" : "formData",
+          "description" : "Device operating system",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "email",
+          "in" : "formData",
+          "description" : "email",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "comment",
+          "in" : "formData",
+          "description" : "comment",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "type",
+          "in" : "formData",
+          "description" : "type(bug)",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "hasScreenshot",
+          "in" : "formData",
+          "description" : "Bug has screenshots(0 => hasn't screenshots, 1 => has screenshots)",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "hasFile",
+          "in" : "formData",
+          "description" : "Bug has file(0 => hasn't file, 1 => has file)",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "country",
+          "in" : "formData",
+          "description" : "Country that bug reported from",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "consoleLog",
+          "in" : "formData",
+          "description" : "Bug console logs",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "userData",
+          "in" : "formData",
+          "description" : "User Data",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "createdAt",
+          "in" : "formData",
+          "description" : "Bug created time",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "duration",
+          "in" : "formData",
+          "description" : "Bug duration",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "appVersion",
+          "in" : "formData",
+          "description" : "Application version",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "storageTotal",
+          "in" : "formData",
+          "description" : "Device total storage",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "user_attributes",
+          "in" : "formData",
+          "description" : "Device user attributes",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        } ],
+        "tags" : [ "BugReporting" ],
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "responses" : {
+          "200" : {
+            "description" : "Reported Successfully",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "88" : {
+            "description" : "Rate limit exceeded",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/healthchecks/bugs" : {
+      "get" : {
+        "summary" : "Bugs healthchecks",
+        "description" : "Bugs healthchecks\n",
+        "tags" : [ "BugsHealthchecks" ],
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "responses" : {
+          "200" : {
+            "description" : "Bug reporting is fully functional",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "480" : {
+            "description" : "Sidekiq bugs queues degraded",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Redis is down or out of memory!",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bugs/:bug_state_hash/state_logs" : {
+      "post" : {
+        "summary" : "Add Bug state logs",
+        "description" : "Add Bug state logs\n",
+        "parameters" : [ {
+          "name" : "application_token",
+          "in" : "formData",
+          "description" : "Application Token",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "uuid",
+          "in" : "formData",
+          "description" : "UUID",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "console_log",
+          "in" : "formData",
+          "description" : "Console Logs",
+          "required" : true,
+          "type" : "array"
+        }, {
+          "name" : "instabug_log",
+          "in" : "formData",
+          "description" : "Instabug Logs",
+          "required" : true,
+          "type" : "array"
+        }, {
+          "name" : "user_data",
+          "in" : "formData",
+          "description" : "User Data",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "user_steps",
+          "in" : "formData",
+          "description" : "User Steps",
+          "required" : true,
+          "type" : "array"
+        }, {
+          "name" : "network_log",
+          "in" : "formData",
+          "description" : "Network Logs",
+          "required" : true,
+          "type" : "array"
+        }, {
+          "name" : "user_events",
+          "in" : "formData",
+          "description" : "User Events",
+          "required" : true,
+          "type" : "array"
+        }, {
+          "name" : "view_hierarchy",
+          "in" : "formData",
+          "description" : "View Hirarchy",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "tags" : [ "BugStateLogs" ],
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "responses" : {
+          "200" : {
+            "description" : "Added Successfully",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "status" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/bugs/:bug_state_hash/attachments" : {
+      "post" : {
+        "summary" : "Add Bug Attacments",
+        "description" : "Add Bug Attacments\n",
+        "parameters" : [ {
+          "name" : "application_token",
+          "in" : "formData",
+          "description" : "Application Token",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "uuid",
+          "in" : "formData",
+          "description" : "uuid",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "metadata",
+          "in" : "formData",
+          "description" : "Attachment metadata",
+          "required" : false,
+          "type" : "file"
+        } ],
+        "tags" : [ "BugAttachments" ],
+        "consumes" : [ "application/x-www-form-urlencoded", "multipart/form-data" ],
+        "responses" : {
+          "200" : {
+            "description" : "Added Successfully",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "status" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/crashes" : {
+      "post" : {
+        "summary" : "Report Crash",
+        "description" : "Report a Crash from the SDK\n",
+        "parameters" : [ {
+          "name" : "instabugLog",
+          "in" : "formData",
+          "description" : "Instabug Log",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "storageTotal",
+          "in" : "formData",
+          "description" : "Device Total Storage",
+          "required" : false,
+          "type" : "string",
+          "format" : "formData"
+        }, {
+          "name" : "city",
+          "in" : "formData",
+          "description" : "City",
+          "required" : false,
+          "type" : "string"
+        }, {
+          "name" : "uuid",
+          "in" : "formData",
+          "description" : "User ID",
+          "required" : false,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "memoryUsed",
+          "in" : "formData",
+          "description" : "Device Memory Used",
+          "required" : false,
+          "type" : "string",
+          "format" : "uuid"
+        }, {
+          "name" : "device",
+          "in" : "formData",
+          "description" : "Device Name",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "memoryFree",
+          "in" : "formData",
+          "description" : "Device Free Memory",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "carrier",
+          "in" : "formData",
+          "description" : "Internet Carrier",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "batteryState",
+          "in" : "formData",
+          "description" : "Battary State (plugged, unplugged)",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "batteryLevel",
+          "in" : "formData",
+          "description" : "Devise battary level",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "storageUsed",
+          "in" : "formData",
+          "description" : "Devise Used Storage",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "storageFree",
+          "in" : "formData",
+          "description" : "Devise Free Storage",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "memoryTotal",
+          "in" : "formData",
+          "description" : "Devise Total Memory",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "wifi_state",
+          "in" : "formData",
+          "description" : "Devise wifi state(conected => true, disconnected => false)",
+          "required" : false,
+          "type" : "boolean",
+          "format" : "formdata"
+        }, {
+          "name" : "token",
+          "in" : "formData",
+          "description" : "Crash Token",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "methodsLog",
+          "in" : "formData",
+          "description" : "Methods Log",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "SDKVersion",
+          "in" : "formData",
+          "description" : "SDK Version",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "os",
+          "in" : "formData",
+          "description" : "Device operating system",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "email",
+          "in" : "formData",
+          "description" : "email",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "comment",
+          "in" : "formData",
+          "description" : "comment",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "type",
+          "in" : "formData",
+          "description" : "type(Crash)",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "hasScreenshot",
+          "in" : "formData",
+          "description" : "Bug has screenshots(0 => hasn't screenshots, 1 => has screenshots)",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "hasFile",
+          "in" : "formData",
+          "description" : "Bug has file(0 => hasn't file, 1 => has file)",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "country",
+          "in" : "formData",
+          "description" : "Country that bug reported from",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "consoleLog",
+          "in" : "formData",
+          "description" : "Bug console logs",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "userData",
+          "in" : "formData",
+          "description" : "User Data",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "createdAt",
+          "in" : "formData",
+          "description" : "Bug created time",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "duration",
+          "in" : "formData",
+          "description" : "Bug duration",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "appVersion",
+          "in" : "formData",
+          "description" : "Application version",
+          "required" : true,
+          "type" : "string",
+          "format" : "formdata"
+        }, {
+          "name" : "user_attributes",
+          "in" : "formData",
+          "description" : "Device user attributes",
+          "required" : false,
+          "type" : "string",
+          "format" : "formdata"
+        } ],
+        "tags" : [ "CrashReporting" ],
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "responses" : {
+          "200" : {
+            "description" : "Reported Successfully",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "id" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/healthchecks/crashes" : {
+      "get" : {
+        "summary" : "Crash healthchecks",
+        "description" : "Crashes healthchecks\n",
+        "tags" : [ "CrashsHealthchecks" ],
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "responses" : {
+          "200" : {
+            "description" : "Crash reporting is fully functional",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "480" : {
+            "description" : "Sidekiq Crash queues degraded",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "Redis is down or out of memory!",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "message" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/crashes/:crash_state_hash/state_logs" : {
+      "post" : {
+        "summary" : "Add Crash state logs",
+        "description" : "Add Crash state logs\n",
+        "parameters" : [ {
+          "name" : "application_token",
+          "in" : "formData",
+          "description" : "Application Token",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "uuid",
+          "in" : "formData",
+          "description" : "UUID",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "console_log1",
+          "in" : "formData",
+          "description" : "Console Logs",
+          "required" : true,
+          "type" : "array"
+        }, {
+          "name" : "instabug_log",
+          "in" : "formData",
+          "description" : "Instabug Logs",
+          "required" : true,
+          "type" : "array"
+        }, {
+          "name" : "user_data",
+          "in" : "formData",
+          "description" : "User Data",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "user_steps1",
+          "in" : "formData",
+          "description" : "User Steps",
+          "required" : true,
+          "type" : "array"
+        }, {
+          "name" : "network_log",
+          "in" : "formData",
+          "description" : "Network Logs",
+          "required" : true,
+          "type" : "array"
+        }, {
+          "name" : "user_events",
+          "in" : "formData",
+          "description" : "User Events",
+          "required" : true,
+          "type" : "array"
+        } ],
+        "tags" : [ "CrashStateLogs" ],
+        "consumes" : [ "application/x-www-form-urlencoded" ],
+        "responses" : {
+          "200" : {
+            "description" : "Added Successfully",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "status" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/crashes/:crash_state_hash/attachments" : {
+      "post" : {
+        "summary" : "Add Crash Attacments",
+        "description" : "Add Crash Attacments",
+        "parameters" : [ {
+          "name" : "application_token",
+          "in" : "formData",
+          "description" : "Application Token",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "uuid",
+          "in" : "formData",
+          "description" : "uuid",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "metadata",
+          "in" : "formData",
+          "description" : "Attachment metadata",
+          "required" : false,
+          "type" : "file"
+        } ],
+        "tags" : [ "CrashAttachments" ],
+        "consumes" : [ "application/x-www-form-urlencoded", "multipart/form-data" ],
+        "responses" : {
+          "200" : {
+            "description" : "Added Successfully",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "status" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/chats" : null,
+    "/chats/sync" : {
+      "post" : {
+        "summary" : "sync the chats and messages",
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "sync",
+          "description" : "sync chats and messages",
+          "schema" : {
+            "type" : "object",
+            "required" : [ "application_token", "uuid" ],
+            "properties" : {
+              "application_token" : {
+                "type" : "string"
+              },
+              "uuid" : {
+                "type" : "string"
+              },
+              "messages_count" : {
+                "type" : "integer"
+              }
+            }
+          }
+        } ],
+        "tags" : [ "Chats" ],
+        "responses" : {
+          "200" : {
+            "description" : "The device in sync",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "messages" : {
+                  "type" : "array"
+                },
+                "ttl" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "203" : {
+            "description" : "The device not in sync get the messages from database",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "messages" : {
+                  "type" : "array"
+                },
+                "ttl" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/chats/create" : {
+      "post" : {
+        "summary" : "create new chat",
+        "consumes" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "chat",
+          "description" : "create new chat",
+          "schema" : {
+            "type" : "object",
+            "required" : [ "application_token", "uuid" ],
+            "properties" : {
+              "application_token" : {
+                "type" : "string"
+              },
+              "uuid" : {
+                "type" : "string"
+              },
+              "app_version" : {
+                "type" : "string"
+              },
+              "battery_level" : {
+                "type" : "string"
+              },
+              "battery_state" : {
+                "type" : "string"
+              },
+              "carrier" : {
+                "type" : "string"
+              },
+              "current_view" : {
+                "type" : "string"
+              },
+              "density" : {
+                "type" : "string"
+              },
+              "device" : {
+                "type" : "string"
+              },
+              "device_rooted" : {
+                "type" : "boolean"
+              },
+              "duration" : {
+                "type" : "integer"
+              },
+              "email" : {
+                "type" : "string"
+              },
+              "locale" : {
+                "type" : "string"
+              },
+              "memory_free" : {
+                "type" : "integer"
+              },
+              "memory_total" : {
+                "type" : "integer"
+              },
+              "memory_used" : {
+                "type" : "integer"
+              },
+              "orientation" : {
+                "type" : "string"
+              },
+              "os" : {
+                "type" : "string"
+              }
+            }
+          }
+        } ],
+        "tags" : [ "Chats" ],
+        "responses" : {
+          "200" : {
+            "description" : "The device in sync",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "messages" : {
+                  "type" : "array"
+                },
+                "ttl" : {
+                  "type" : "string"
+                }
+              }
+            }
+          },
+          "203" : {
+            "description" : "The device not in sync get the messages from database",
+            "schema" : {
+              "type" : "object",
+              "properties" : {
+                "messages" : {
+                  "type" : "array"
+                },
+                "ttl" : {
+                  "type" : "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/instabugteam/Instabug/v3",
+  "schemes" : [ "https" ]
+}
